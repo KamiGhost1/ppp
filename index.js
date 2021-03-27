@@ -185,8 +185,5 @@ let ppp = function ppp(){
 
 let a = new ppp()
 
-// console.log(a.main.crc('f', '1011'))
-console.log(a.main.generate(['1234', '1234']))
-// console.log(a.main.getSeedPhrase('c98cda5f9433247dee9ed503a4dc58f52d23ecca3a2b5f7072331285f71bda125d'))
 
 module.exports = new ppp()
