@@ -11,5 +11,8 @@
     "url": "git@kami:kamighost1/ppp"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
 }

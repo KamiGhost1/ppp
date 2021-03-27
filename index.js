@@ -1,8 +1,13 @@
 const wordlist = require('./wordlist')
-const enq = require('./web-enq')
+const CryptoJS = require('crypto-js')
+
 
 let ppp = function ppp(){
-    let web = new enq()
+
+    function sha(str){
+        return CryptoJS.SHA256(str).toString()
+    }
+
     this.wordlist = ()=>{
         return wordlist
     }
@@ -15,7 +20,7 @@ let ppp = function ppp(){
         }
         let hashSum = '';
         for(let i in array){
-            hashSum = web.Utils.crypto.sha256(hashSum+array[i]);
+            hashSum = sha(hashSum+array[i]);
         }
         hashSum = crc(hashSum,decGx[0])
         let seed = getSeedPhrase(hashSum)
