@@ -12,9 +12,9 @@ let ppp = function ppp(){
         return wordlist
     }
 
-    let decGx = [299]
+    let decGx = [299,285,351,355,357,361,451,487]
 
-    function generate(array){
+    function generate(array, polynomial = 0){
         if(typeof array !== 'object'){
             return false
         }
@@ -22,7 +22,7 @@ let ppp = function ppp(){
         for(let i in array){
             hashSum = sha(hashSum+array[i]);
         }
-        hashSum = crc(hashSum,decGx[0])
+        hashSum = crc(hashSum,decGx[polynomial])
         let seed = getSeedPhrase(hashSum)
         return {privateKey:hashSum, seed}
     }
@@ -189,6 +189,5 @@ let ppp = function ppp(){
 }
 
 let a = new ppp()
-
 
 module.exports = new ppp()
